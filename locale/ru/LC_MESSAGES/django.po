@@ -42,7 +42,7 @@ msgstr "Связаться с нами"
 
 #: .\templates\base.html:71
 msgid "languages"
-msgstr "Языки"
+msgstr "🇷🇺"
 
 #: .\templates\base.html:84 .\templates\base.html:98
 msgid "video_lesson"

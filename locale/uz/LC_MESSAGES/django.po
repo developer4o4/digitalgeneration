@@ -40,7 +40,7 @@ msgstr "Biz bilan aloqa"
 
 #: .\templates\base.html:71
 msgid "languages"
-msgstr "Tillar"
+msgstr "🇺🇿"
 
 #: .\templates\base.html:84 .\templates\base.html:98
 msgid "video_lesson"
