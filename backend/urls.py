@@ -1,0 +1,56 @@
+"""backend URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include, re_path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls.i18n import urlpatterns as urls, i18n_patterns
+from django.http.response import HttpResponseRedirect
+from django.utils.translation import activate
+from django.views.static import serve
+
+
+urlpatterns = urls
+
+urlpatterns += i18n_patterns(
+    path('', include('main.urls', namespace='main')),
+    path('admin/', admin.site.urls),
+)
+
+
+def change_lang(req):
+    try:
+        now_lang = req.session.get('django_language', None) or req.COOKIES.get('django_language', 'uz')
+    except:
+        now_lang = 'uz'
+    
+    if now_lang == 'uz':
+        new_lang = 'en'
+    else:
+        new_lang = 'uz'
+    
+    req.session['django_language'] = new_lang
+    activate(new_lang)
+
+    res = HttpResponseRedirect(f'/{new_lang}')
+    res.set_cookie('django_language', new_lang)
+
+    return res
+
+
+urlpatterns.append(path('change-lang', change_lang))
+urlpatterns.append(path('', lambda request: HttpResponseRedirect('/uz')))
+
