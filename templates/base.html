@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load i18n %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Generation - {% block title %}Asosiy sahifa{% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <meta name="title" content="Digital Generation Uzbeksitan">
+<meta name="description" content="O'zbekiston Yoshlarini Raqamli Avlodga bo'lgan qiziqshlarini, ularni xarakatlarini rag'batlantirishga yo'naltirilgan nodavlat notijorat muassasa.">
+<meta name="keywords" content="digitalgeneration, digita, digital uzbekistan, digital generation uzbekistan, digitalgeneration, digitalgenerationuzbekistan. dguzbekistan, raqamliavlod, raqamli avlod, raqamli avlod it oromgohi, it, it uzbekistan, digita camp">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Digital Generation Uzbeksitan NNM">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png">
+<link rel="manifest" href="/static/img/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script src="/static/playerjs.js" type="text/javascript"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container style-container">
+                <a class="navbar-brand" href="#">
+                    <img src="/static/img/logo.png" alt="Bootstrap" height="60">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse align-items-center justify-content-center w-100" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center justify-content-center w-100">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">{% trans "home" %}</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/#news">Yangiliklar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/#in-future">{% trans "events" %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/#our-team">{% trans "our_team" %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/#contact">{% trans "contact_us" %}</a>
+                        </li>
+                    </ul>
+                    <div class="another-content d-flex align-items-center" style="gap: 2rem">
+                        <a class="btn btn-success p-0 px-4 d-flex align-items-center justify-content-center rounded-3 border-0" style="background-color: #5FB465;height: 40px;width: max-content;" id="video-darslik" href="https://raqamliavlod.uz/courses">
+                            <img src="/static/img/svg/video.svg" alt="" width="22" height="14">
+                            <div class="ms-2 w-100">{% trans 'video_lesson' %}</div>
+                        </a>
+                        <!-- <div class="split" style="height: 38px;border-left: 1px solid #C4C4C4;"></div>
+                        <div class="lang d-flex" onclick="window.location = '/change-lang?furl={{ request.path }}'">
+                            <div class="flag">
+                                <span style="background-color: #66C9F3;"></span>
+                                <span style="background-color: #F9F9F9;"></span>
+                                <span style="background-color: #5FC047;"></span>
+                            </div>
+                            <span class="ms-2">{% if request.session.django_language == 'uz' %}{% trans 'eng' %}{% else %}{% trans 'uz'%}{% endif %}</span>
+                    </ul>
+                    <div class="another-content d-flex align-items-center" style="gap: 2rem">
+                        <a class="btn btn-success p-0 px-4 d-flex align-items-center justify-content-center rounded-3 border-0" style="background-color: #5FB465;height: 40px;width: max-content;" id="video-darslik" href="https://raqamliavlod.uz/courses">
+                            <img src="/static/img/svg/video.svg" alt="" width="22" height="14">
+                            <div class="ms-2 w-100">{% trans 'video_lesson' %}</div>
+                        </a>
+                        <!-- <div class="split" style="height: 38px;border-left: 1px solid #C4C4C4;"></div>
+                        <div class="lang d-flex" onclick="window.location = '/change-lang?furl={{ request.path }}'">
+                            <div class="flag">
+                                <span style="background-color: #66C9F3;"></span>
+                                <span style="background-color: #F9F9F9;"></span>
+                                <span style="background-color: #5FC047;"></span>
+                            </div>
+                            <span class="ms-2">{% if request.session.django_language == 'uz' %}{% trans 'eng' %}{% else %}{% trans 'uz'%}{% endif %}</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    {% block content %}{% endblock content %}
+    
+    <footer>
+        <div class="color-bars">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="footer-data">
+            <div class="row g-0 h-100">
+                <div class="col">
+                    <img src="/static/img/logo-white.png" alt="" height="60">
+                </div>
+                <div class="col">
+                    <p class="m-0 copyright">Digital Generation Uzbekistan © 2023</p>
+                </div>
+                <div class="col">
+                    <div class="collection">
+                        <a href="http://facebook.com/digitalgeneration.uz">
+                            <img src="/static/img/Fill 3.svg" alt="" width="15px" height="15px">
+                        </a>
+                        <a href="http://instagram.com/dguzbekistan">
+                            <img src="/static/img/Fill 23.svg" alt="" width="15px" height="15px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+       var player = new Playerjs({id:"player", file:"/static/video.mp4"});
+    </script>
+    <script>
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                type: 'video',
+                youtube: {
+                    autoplay: 1
+                }
+            });
+
+            const lightbox2 = GLightbox({
+                selector: '.glightbox-im',
+                type: 'image',
+            });
+
+            $('#contact-form').submit((event) => {
+                let name = $('#contact_name').val();
+                let email = $('#contact_email').val();
+                let phone = $('#contact_phone').val();
+                let text = $('#contact_text').val();
+
+                if (name && email && phone && text) {
+                    let fullMessage = `<b>${email}</b> ${phone}\n\n<i>${name}</i>\n-----------------\n${text}`;
+
+                    $.ajax({
+                        url: "https://api.telegram.org/bot5918813660:AAFw1s57GVFP3FC_Mpvdt8AQ_xb5YbvxYDY/sendMessage",
+                        dataType: 'JSON',
+                        method: 'POST',
+                        data: {
+                            chat_id: '5599197669',
+                            text: fullMessage,
+                            parse_mode: 'HTML'
+                        },
+                        success: data => {

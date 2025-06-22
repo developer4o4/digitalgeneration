@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+{% block title %}Asosiy sahifa{% endblock title %}
+{% load i18n %}
+{% block content %}
+    <style>
+	.team-member h4 {
+		height:unset !Important;
+	}
+    </style>
+    <section id="hero">
+        <div class="row g-0">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <div id="left-hero">
+                    <div class="vector"></div>
+                    <div class="content">
+                        <h4>Digital Generation Uzbekistan</h4>
+                        <h1><span>IT dunyosini</span><br>
+                            biz bilan kashf eting</h1>
+                        <a href="#about-us" class="btn btn-success rounded-3">{% trans 'more' %}</a>
+                    </div>
+                    <div class="gradient"></div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <div id="right-hero"></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="about-us">
+        <div class="vector"></div>
+        <div class="vector"></div>
+        <div class="container style">
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-center justify-content-left">
+                    <img src="/static/img/logo-about.png" alt="">
+                    <h3>{% trans 'about_us' %}</h3>
+                </div>
+                <div class="col-md-8">
+                    <h4>{% trans 'biggest_it_company_in_uzbekistan' %}</h4>
+                    <p>{% trans 'about_us_text' %}</p>
+                </div>
+                <hr id="sep">
+            </div>
+        </div>
+    </div>
+
+    <div id="about-vidoe-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YMh5eatynV8?si=UryvZ_wVcPHeyHFC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!-- <video tabindex="-1" class="video-stream html5-main-video" webkit-playsinline="" playsinline="" controlslist="nodownload" style="width: 1176px; height: 662px; left: 0px; top: 0px;" src="https://www.youtube.com/watch?v=YMh5eatynV8&list=PLR4Kn3MQZTc8XyLT8RJuet7eF6xMU57LJ"></video> -->
+        <!-- <div class="player">
+            <a href="https://www.youtube.com/watch?v=YMh5eatynV8&list=PLR4Kn3MQZTc8XyLT8RJuet7eF6xMU57LJ" class="glightbox">
+                <div class="play-button">
+                    <img src="/static/img/play-button.png" alt="">
+                </div>
+            </a> -->
+          <!--  <div class="text">{% trans 'say_tizer_video' %}</div>
+            <div id="player"></div> -->
+
+    </div>
+
+    <div id="news">
+        <div class="container py-5">
+            <div class="title">
+                <div class="text">{% trans 'news' %}</div>
+                <a href="{% url 'main:list_news' %}" class="link">{% trans 'all_details' %}</a>
+            </div>
+
+            <div class="content">
+                <div class="row g-4">
+                    {% for new in news %}
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card news-card border-0 h-100 rounded-3" style="overflow: hidden;">
+                            <img src="{{ new.image.url }}" alt="" class="card-image-top">
+                            <div class="card-body">
+                                <h3 class="mb-3">{{ new.title }}</h3>
+                                <p class="mb-3 small">{{ new.date|date:"d F, Y" }}</p>
+                                <p class="m-0">{{ new.text }}</p>
+                            </div>
+                            <div class="card-footer bg-white"><a href="{% url 'main:news_detail' new.slug %}" class="btn btn-outline-primary w-100 rounded-3" style="border-width: 2px;">{% trans 'more' %}</a></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="in-future">
+        <div class="container py-5">
+            <div class="title">Tadbirlarimiz
+            </div>
+
+            <div class="future-cards">
+                {% for plan in future %}
+                <div class="future-card" style="--color: #3D67AD;">
+                    <div class="time-data">
+                        <div class="line"></div>
+                        <div class="dot"></div>
+                        <div class="time">{{ plan.data|date:"d F," }}<br>
+                            {{ plan.data.year }} yil</div>
+                    </div>
+                    <div class="text-data">
+                        <img src="{{ plan.image.url }}" alt="" class="image">
+                        <div class="content">
+                            <h3>{{ plan.title }}</h3>
+                            <div class="line"></div>
+                            <p>{{ plan.text }}</p>
+
+                            <span class="datetime">{{ plan.data|date:"d F," }} {{ plan.data.year }} yil</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="our-team">
+        <div class="container py-5">
+            <div class="title">{% trans 'our_team' %}</div>
+	    <div class="row g-4 justify-content-evenly">
+		<div class="team-member col-lg-3 col-md-3 col-sm-12" >
+			<img src="/static/img/djalalov.jpeg" alt="..." style="border: none; border-radius: 50%;" loading="lazy">
+                	<h4>Djalalov Azamat Axrarovich</h4>
+                	<small>Direktor</small>
+		</div>
+		<div class="team-member col-lg-3 col-md-3 col-sm-12" >
+                        <img src="/static/img/miromon.png" alt="..." style="border: none; border-radius: 50%;" loading="lazy" >
+                        <h4>Tursunov Miromon Oybekovich</h4>
+                        <small>Loyiha Koordinatori</small>
+                </div>
+		<div class="team-member col-lg-3 col-md-3 col-sm-12" >
+                        <img src="/static/img/muzaffarka.png" alt="..." style="border: none; border-radius: 50%;"  loading="lazy">
+                        <h4>Musashayxov Muzaffar</h4>
+                        <small>Maslahatchi</small>
+                </div>
+		<!-- <div class="team-member col-lg-3 col-md-3 col-sm-12" >
+                        <img src="/static/img/maloxat.jpg" alt="..." style="border: none; border-radius: 50%" loading="lazy">
+                        <h4>Shahobiddinova Malohat Zaynilobiddin qizi</h4>
+                        <small>DG Ladies loyiha koordinatori</small>
+                </div> -->
+	    </div>
+	<br />
+	<br/>
+            <div class="team-members row g-4">
+                {% for member in team %}
+                <div class="team-member col-lg-3 col-md-3 col-sm-12">
+                    <img src="{{ member.image.url }}" alt="..." loading="lazy" >
+                    <h4>{{ member.name }}</h4>
+                    <small>{{ member.profession }}</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="gallary">
+        <div class="container py-5">
+            <div class="title">
+                <span>{% trans 'gallary' %}</span>
+                <a href="{% url 'main:list_gallary' %}">{% trans 'all' %}</a>
+            </div>
+            <div class="gallary">
+		    <div class="row__gallary">
+                    {% for gallary in latest_gallary %}
+                    <img src="{{ gallary.image.url }}" alt="" class="glightbox-im image">
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="partners">
+        <div class="container">
+            <div class="title">Hamkorlarimiz</div>
+        </div>
+
+        <div class="my-slides">
+            <div>
+		<swiper-container 
+  loop="true" 
+  autoplay-delay="2500" 
+  autoplay-disable-on-interaction="false" 
+  space-between="10" 
+  slides-per-view="4" 
+  centered-slides="false"
+  breakpoints='{
+    "300": { "slidesPerView": 1, "spaceBetween": 10, "centeredSlides": true },
+    "768": { "slidesPerView": 2, "spaceBetween": 10 },
+    "1024": { "slidesPerView": 3, "spaceBetween": 10 },
+    "1366": { "slidesPerView": 4, "spaceBetween": 10 }
+  }'
+>
+  {% for partner in partners %}
+    <swiper-slide>
+      <img src="{{ partner.image.url }}" alt="" height="98px">
+    </swiper-slide>
+  {% endfor %}
+</swiper-container>
+
+<script>
+  window.addEventListener('resize', () => {
+    const swiper = document.querySelector('swiper-container');
+    swiper.swiper.update(); // Manually trigger update on resize
+  });
+</script>
+
+	    </div>
+	</div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="form">
+                <div class="row g-0">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <form action="{% url 'main:accept-murojaat' %}" method="post" id="contact-form">
+                            <p class="m-0">Takliflar va murojaat uchun</p>
+                            <h3>qayta aloqa</h3>
+                            <div class="row g-4">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label for="" class="form-label">Ism</label>
+                                    <input type="text" name="ism" class="form-control" id="contact_name">
+                                    <div class="error"></div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <label for="" class="form-label">Elektron pochta</label>
+                                    <input type="text" name="email" class="form-control" id="contact_email">
+                                    <div class="error"></div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="" class="form-label">Telefon raqam</label>
+                                    <input type="text" name="phone" class="form-control" id="contact_phone">
+                                    <div class="error"></div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="" class="form-label">Matn</label>
+                                    <textarea id="contact_text" name="matn" rows="5" class="form-control"></textarea>
+                                    <div class="error"></div>
+                                </div>
+                                <div class="col-12" style="text-align: right;">
+                                    <button class="btn btn-primary">Yuborish</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <iframe src="{{ map.embeded }}" width="100%" height="675px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

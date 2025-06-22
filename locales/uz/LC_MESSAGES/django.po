@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-22 18:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\backend\settings.py:127
+msgid "O'zbekcha"
+msgstr "O'zbekcha"
+
+#: .\backend\settings.py:128
+msgid "English"
+msgstr "English"
+
+#: .\templates\base.html:30
+msgid "home"
+msgstr "Asosiy sahifa"
+
+#: .\templates\base.html:33 .\templates\index.html:59
+msgid "news"
+msgstr "Yangiliklar"
+
+#: .\templates\base.html:36
+msgid "events"
+msgstr "Tadbirlar"
+
+#: .\templates\base.html:39 .\templates\index.html:113
+msgid "our_team"
+msgstr "Bizning jamoa"
+
+#: .\templates\base.html:42
+msgid "contact_us"
+msgstr "Biz bilan aloqa"
+
+#: .\templates\base.html:48
+msgid "video_lesson"
+msgstr "Video darslik"
+
+#: .\templates\base.html:57
+msgid "eng"
+msgstr "ENG"
+
+#: .\templates\base.html:57
+msgid "uz"
+msgstr "UZB"
+
+#: .\templates\index.html:14 .\templates\index.html:74
+#: .\templates\list-gallary.html:14 .\templates\list-news.html:16
+msgid "more"
+msgstr "Ko'proq"
+
+#: .\templates\index.html:32
+msgid "about_us"
+msgstr "Biz haqimizda"
+
+#: .\templates\index.html:35
+msgid "biggest_it_company_in_uzbekistan"
+msgstr "O'ZBEKISTONDA ENG KATTA IT-JAMIYAT"
+
+#: .\templates\index.html:36
+msgid "about_us_text"
+msgstr "Digital Generation Uzbekistan har qanday darajada strategik qarorlarni qabul qilishda axborot texnologiyalaridan foydalanadigan boshqaruvchilarga yordam beradi. Bizning asosiy yo'nalishlarimiz dasturlash, robototexnika, media va raqamli marketing, dizayn va soft skills (professional ko'nikmalar)."
+
+#: .\templates\index.html:50
+msgid "say_tizer_video"
+msgstr "Tizer videomizni tomosha qiling"
+
+#: .\templates\index.html:60
+msgid "all_details"
+msgstr "Barcha yangiliklar"
+
+#: .\templates\index.html:85
+msgid "future_plans"
+msgstr "Kelgusi tadbirlar"
+
+#: .\templates\index.html:130
+msgid "gallary"
+msgstr "Galereya"
+
+#: .\templates\index.html:131
+msgid "all"
+msgstr "Barcha media"
+
+#: .\templates\index.html:150
+msgid "partners"
+msgstr ""
+
+#: .\templates\list-gallary.html:23 .\templates\list-gallary.html:25
+#: .\templates\list-news.html:25 .\templates\list-news.html:27
+msgid "prev"
+msgstr "Oldingi"
+
+#: .\templates\list-gallary.html:35 .\templates\list-gallary.html:37
+#: .\templates\list-news.html:37 .\templates\list-news.html:39
+msgid "next"
+msgstr "Keyingi"
