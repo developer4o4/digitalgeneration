@@ -14,8 +14,8 @@
                     <div class="vector"></div>
                     <div class="content">
                         <h4>Digital Generation Uzbekistan</h4>
-                        <h1><span>IT dunyosini</span><br>
-                            biz bilan kashf eting</h1>
+                        <h1><span>{% trans "IT dunyosini" %}</span><br>
+                            {% trans "biz bilan kashf eting" %}</h1>
                         <a href="#about-us" class="btn btn-success rounded-3">{% trans 'more' %}</a>
                     </div>
                     <div class="gradient"></div>
@@ -88,7 +88,7 @@
 
     <div id="in-future">
         <div class="container py-5">
-            <div class="title">Tadbirlarimiz
+            <div class="title">{% trans "Tadbirlarimiz" %}
             </div>
 
             <div class="future-cards">
@@ -98,7 +98,7 @@
                         <div class="line"></div>
                         <div class="dot"></div>
                         <div class="time">{{ plan.data|date:"d F," }}<br>
-                            {{ plan.data.year }} yil</div>
+                            {{ plan.data.year }} {% trans "year" %}</div>
                     </div>
                     <div class="text-data">
                         <img src="{{ plan.image.url }}" alt="" class="image">
@@ -174,7 +174,7 @@
 
     <div id="partners">
         <div class="container">
-            <div class="title">Hamkorlarimiz</div>
+            <div class="title">{% trans "Hamkorlarimiz" %}</div>
         </div>
 
         <div class="my-slides">
@@ -217,31 +217,31 @@
                 <div class="row g-0">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <form action="{% url 'main:accept-murojaat' %}" method="post" id="contact-form">
-                            <p class="m-0">Takliflar va murojaat uchun</p>
-                            <h3>qayta aloqa</h3>
+                            <p class="m-0">{% trans "Takliflar va murojaat uchun" %}</p>
+                            <h3>{% trans "qayta aloqa" %}</h3>
                             <div class="row g-4">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label for="" class="form-label">Ism</label>
+                                    <label for="" class="form-label">{% trans "name" %}</label>
                                     <input type="text" name="ism" class="form-control" id="contact_name">
                                     <div class="error"></div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <label for="" class="form-label">Elektron pochta</label>
+                                    <label for="" class="form-label">{% trans "email" %}</label>
                                     <input type="text" name="email" class="form-control" id="contact_email">
                                     <div class="error"></div>
                                 </div>
                                 <div class="col-12">
-                                    <label for="" class="form-label">Telefon raqam</label>
+                                    <label for="" class="form-label">{% trans "phone_number" %}</label>
                                     <input type="text" name="phone" class="form-control" id="contact_phone">
                                     <div class="error"></div>
                                 </div>
                                 <div class="col-12">
-                                    <label for="" class="form-label">Matn</label>
+                                    <label for="" class="form-label">{% trans "text" %}</label>
                                     <textarea id="contact_text" name="matn" rows="5" class="form-control"></textarea>
                                     <div class="error"></div>
                                 </div>
                                 <div class="col-12" style="text-align: right;">
-                                    <button class="btn btn-primary">Yuborish</button>
+                                    <button class="btn btn-primary">{% trans "send" %}</button>
                                 </div>
                             </div>
                         </form>

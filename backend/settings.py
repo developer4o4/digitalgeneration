@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gmd^(v#hz2#@i!+%l6qo$)x2zqvdur3cx0(xx7oine_=*=r(%+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['digitalgeneration.uz', '127.0.0.1', '0.0.0.0']
 
@@ -116,6 +116,7 @@ CKEDITOR_IMAGE_BACKEND = 'pillow'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
@@ -178,17 +179,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-_ = lambda s: str(s)
 
-LANGUAGE_CODE = 'uz'
-DEFAULT_LANGUAGE_CODE = 'uz'
+LANGUAGE_CODE = 'en'
+DEFAULT_LANGUAGE_CODE = 'en'
 LANGUAGES = {
-    'uz': _("O'zbekcha"),
-    'en': _("English"),
+    'uz': "O'zbekcha",
+    'en': "English",
+    'ru': "Russian",
 }
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locales')
+    os.path.join(BASE_DIR, 'locale')
 ]
 
 TIME_ZONE = 'Asia/Tashkent'

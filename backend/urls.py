@@ -25,9 +25,9 @@ from django.views.static import serve
 
 urlpatterns = urls
 
-urlpatterns += i18n_patterns(
-    path('', include('main.urls', namespace='main')),
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
+    path('', include('main.urls', namespace='main')),
 )
 
 
@@ -51,6 +51,6 @@ def change_lang(req):
     return res
 
 
-urlpatterns.append(path('change-lang', change_lang))
-urlpatterns.append(path('', lambda request: HttpResponseRedirect('/uz')))
+# urlpatterns.append(path('change-lang', change_lang))
+# urlpatterns.append(path('', lambda request: HttpResponseRedirect('/uz')))
 

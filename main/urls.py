@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import IndexView, ListNews, ListGallary, NewsView, GallaryView,accept_murojaat
+from .views import IndexView, ListNews, ListGallary, NewsView, GallaryView,accept_murojaat,ChangeLenguage
 
 app_name = 'main'
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
+    path('chl', ChangeLenguage.as_view()),
     path('news/', ListNews.as_view(), name='list_news'),
     path('send-murojaat/', accept_murojaat, name='accept-murojaat'),
     path('gallary/', ListGallary.as_view(), name='list_gallary'),

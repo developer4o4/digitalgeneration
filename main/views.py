@@ -68,3 +68,9 @@ def accept_murojaat(request):
         if form.is_valid():
             form.save()
     return redirect('/')
+
+
+
+class ChangeLenguage(View):
+    def get(self, request):
+        return redirect(f'/{request.GET.get("lng", "ru")}')
